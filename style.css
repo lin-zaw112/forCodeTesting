@@ -5,8 +5,6 @@
 }
 
 body {
-    background-color: black;
-    color: aliceblue !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,5 +22,4 @@ body ul li:hover {
 
 body ul li a {
     text-decoration: none;
-    color: #fff !important;
 }
