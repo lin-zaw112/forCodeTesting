@@ -8,7 +8,6 @@
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
-document.querySelector('.number').textContent = secretNumber;
 
 //AGAIN Button
 document.querySelector(".again").addEventListener('click', function() {
@@ -20,13 +19,10 @@ document.querySelector(".again").addEventListener('click', function() {
     document.querySelector('.guess').value = ' ';
     if (highScore < score) {
         highScore = Number(document.querySelector('.score').textContent);
-        score = 20;
         document.querySelector('.highscore').textContent = highScore;
+    }
+    score = 20;
         document.querySelector('.score').textContent = score;
-    } else if (score >= highScore) {
-        score = 20;
-        document.querySelector('.score').textContent = score;
-    };
 });
 //Check Button
 document.querySelector('.check').addEventListener('click', function() {
@@ -42,10 +38,18 @@ document.querySelector('.check').addEventListener('click', function() {
     }
     // when   Player is Win 
     else if (guess === secretNumber) {
+        document.querySelector('.number').textContent = secretNumber;
         document.querySelector('.message').textContent = 'Correct Number';
         document.querySelector('body').style.backgroundColor = 'green';
         document.querySelector('.number').style.width = '30rem';
+        // if (score > highScore) {
+        //     highScore = score;
+        //     document.querySelector('.highscore').textContent = highScore;
+        //     score = 20;
+        //     document.querySelector('.score').textContent = score;
+        // }
     }
+
     // when input Number is Too low 
     else if (guess < secretNumber) {
         if (score > 0) {
