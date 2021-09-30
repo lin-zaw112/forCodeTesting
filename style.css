@@ -6,7 +6,7 @@
 
 body {
     background-color: black;
-    color: aliceblue;
+    color: aliceblue !important;
     display: flex;
     align-items: center;
     justify-content: center;
