@@ -15,11 +15,11 @@ body {
 }
 
 body ul li {
-    box-shadow: 10px 0px 0px 0px royalblue;
+    box-shadow: -10px 0px 0px 0px royalblue;
 }
 
 body ul li:hover {
-    box-shadow: 20px 0px 0px 0px royalblue;
+    box-shadow: -20px 0px 0px 0px royalblue;
 }
 
 body ul li a {
