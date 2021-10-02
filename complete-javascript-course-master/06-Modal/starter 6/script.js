@@ -1,2 +1,2 @@
 'use strict';
-const modal = document.queryselector('.modal');
+const modal = document.querySelector('.modal');
