@@ -10,19 +10,30 @@ body {
     justify-content: center;
     width: 100%;
     height: 100vh;
+    font-size: 1.5em;
+}
+
+body ul {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 250px);
 }
 
 body ul li {
-    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+    border: dotted 1px red;
     list-style-type: none;
-    box-shadow: -10px 0px 0px 0px royalblue;
-}
-
-body ul li:hover {
-    margin-left: 10px;
-    box-shadow: -20px 0px 0px 0px royalblue;
+    background-color: rgba(200, 200, 200, 1);
 }
 
 body ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
+    padding-left: 50%;
+    padding-top: 50%;
 }
