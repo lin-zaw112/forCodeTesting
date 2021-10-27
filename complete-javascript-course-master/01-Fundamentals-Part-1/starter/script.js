@@ -275,3 +275,25 @@
 // const bill = 430;
 // let tip = Math.floor(bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2);
 // console.log(`The bill was ${bill}.The tip was ${tip} and total value ${bill + tip}`);
+
+const arr1 = [1, 4, 6];
+const arr2 = [2, 3, 5];
+const arr = [];
+let i = 0;
+const temp = arr1[i];
+const temp1 = arr2[i];
+for (i = 0; i < 6; i++) {
+	if (temp === 1 || temp1 === 2) {
+		arr[i] = temp;
+		arr[i + 1] = temp1;
+	} else if (temp === 4 || temp1 === 3) {
+		arr[i + 1] = temp1;
+		arr[i + 2] = temp;
+	} else if (temp === 6 || temp1 === 5) {
+		arr[i + 2] = temp1;
+		arr[i + 3] = temp;
+	}
+}
+const finalArr = [arr1[0], arr2[0], arr2[1], arr1[1], arr2[2], arr1[2]];
+console.log(finalArr);
+console.log(arr);
