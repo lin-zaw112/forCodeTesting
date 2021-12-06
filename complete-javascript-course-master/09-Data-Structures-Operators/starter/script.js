@@ -47,8 +47,112 @@ const restaurant = {
     },
 };
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-restaurant.order(1, 0);
+const orderSet = new Set([
+    'Pasta',
+    'Pizza',
+    'Pasta',
+    'Pizza',
+    'Pasta',
+    'Pizza',
+    'Risotto',
+    'Pizza',
+
+    ]);
+const questions = new Map([
+    ['questions','What is the best programming language in the world?'],
+    [1,'C'],
+    [2,'java'],
+    [3,'JavaScript'],
+    ['correct',3],
+    [true,'Correct Answer'],
+    [false,'Try Again'],
+]);
+const mapHours = new Map(Object.entries(openingHours));
+
+console.log(mapHours);
+console.log(questions);
+console.log(questions.get('questions'));
+for (const [key,value] of questions) {
+    if (typeof key === "number") {
+        console.log(`Answer ${key} : ${value}`);
+    }
+}
+const answer = Number(prompt('Plese Enter Correct Answer Number'));
+
+console.log(questions.get(questions.get('correct') === answer));
+// const rest = new Map();
+// rest.set('name' ,'Food Panda');
+// rest.set(1,'Yangon,Myanmar');
+// rest.set(2,'Mandalay,Myanmar');
+
+
+// console.log(rest);
+// rest
+//     .set('category',['Italian,Pizzeria','Vegetarian','Organic'])
+//     .set('Open',11)
+//     .set('Close',23)
+//     .set(true,'We are Open')
+//     .set(false,'We are Close');
+// console.log(rest);
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+// const times = 20 ;
+// console.log(rest.get(times > rest.get('Open') && times < rest.get('Close')));
+
+// console.log(rest.has('category'));
+
+
+// const arr = [1,2];
+// rest.set(arr,'test');
+// console.log(rest.get(arr));
+// console.log(rest);
+// console.log(orderSet.has("Pizza"));
+// console.log(orderSet.has("Bread"));
+// console.log(orderSet.add(" Garlic Bread"));
+// console.log(orderSet.add("Bread"));
+// console.log(orderSet.delete("Bread"));
+// console.log(orderSet.has("Bread"));
+// console.log(orderSet.size);
+// console.log(orderSet[0]);
+// console.log(orderSet);c
+
+// const properties = Object.keys(openingHours);
+
+
+// let openStr = `We are open on ${properties.length} days :`;
+
+// for(const day of properties){
+//     openStr += `${day},`
+// }
+// console.log(openStr);
+
+// const values = Object.values(openingHours);
+// console.log(values);
+// const entires = Object.entries(openingHours);
+// console.log(entires);
+// for (const [key,{open,close}] of entires){
+//     console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// restaurant.order(1, 0);
+// const user = [{
+//     name:'Hello world',
+//     email:'example@gmail.com'
+// }];
+// console.log(user[0]?.password || `doesn't exist`);
+// const users = [];
+// if (user.length > 0) {
+//     console.log(user[0].name);
+// }  else{
+//     console.log(`doesn't not exist`);
+// }
+// const days = ['mon','tue','wed','thu','fri','sat','sun'];
+// for (const day of days) {
+//     const open = restaurant?.openingHours[day]?.open ?? 'close';
+//     const close = restaurant?.openingHours[day]?.close ?? 'close';
+//     console.log(open !== 'close' ? `on ${day},we open at ${open} to ${close}` : `on ${day},we close`);
+// }
+
 // const orderObject = restaurant.orderDelivery({
 //   time: '20:30',
 //   address: 'Bogo',
@@ -257,3 +361,104 @@ restaurant.order(1, 0);
 // }
 // printGoals(...game.scored);
 // team1 < team2 && console.log(`team1 winner`);
+
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+// odd of victory ${team} : ${odd}
+/*
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+const goalplayer = game.scored;
+const oddsValues = Object.values(game.odds);
+const oddsEntries = Object.entries(game.odds);
+const [team1,x = "draw",team2] = [game.team1,,game.team2]
+let average = 0;
+
+// #1
+
+// for (let [key,player] of Object.entries(goalplayer)){
+//     const goal = Number(key) + 1;
+//     console.log(`👾 Goal ${goal} : ${player}`);
+// }
+
+
+for (let [key,player] of goalplayer.entries()) console.log(`🏈 Goal ${key + 1} : ${player}`);
+
+// #2
+
+for (const odd of oddsValues) average += odd;
+average /= oddsValues.length;
+console.log(average);
+
+// 3
+
+
+for (const [t,odd] of oddsEntries){
+    if (t === "team1") {
+    console.log(`odd of victory ${team1} : ${odd}`);
+    }else if(t === "x"){
+    console.log(`odd of draw  : ${odd}`);
+
+    }else if (t === "team2") {
+    console.log(`odd of victory ${team2} : ${odd}`);  
+    }
+      const teamStr = t === 'x' ? 'draw' : `victory ${game[t]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+      'Pavard',
+}
+*/
