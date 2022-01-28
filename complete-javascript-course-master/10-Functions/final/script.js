@@ -248,8 +248,6 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
-
-/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -294,7 +292,6 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 // [5, 2, 3]
 // [1, 5, 3, 9, 6, 1]
 
-
 ///////////////////////////////////////
 // Immediately Invoked Function Expressions (IIFE)
 const runOnce = function () {
@@ -319,7 +316,6 @@ runOnce();
 // console.log(isPrivate);
 console.log(notPrivate);
 
-
 ///////////////////////////////////////
 // Closures
 const secureBooking = function () {
@@ -338,7 +334,6 @@ booker();
 booker();
 
 console.dir(booker);
-
 
 ///////////////////////////////////////
 // More Closure Examples
@@ -382,7 +377,6 @@ const boardPassengers = function (n, wait) {
 
 const perGroup = 1000;
 boardPassengers(180, 3);
-*/
 
 ///////////////////////////////////////
 // Coding Challenge #2
@@ -407,4 +401,3 @@ GOOD LUCK 😀
   });
 })();
 */
-

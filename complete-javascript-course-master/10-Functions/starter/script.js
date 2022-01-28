@@ -30,23 +30,37 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
-const option = [`0 : JavaScript`, `1: Python`, `2: Rust`, `3: C++`];
-const poll = {
-  question: 'What is your favourite programming language?',
-  option,
-  answer: new Array(4).fill(0),
-  registerNewAnswer() {
-    prompt(
-      `${this.question} 
- ${this.option.join('\n')}
-(write Option number)`
-    );
-  },
-};
-document
-  .querySelector('.poll')
-  .addEventListener('click', poll.registerNewAnswer);
-poll.registerNewAnswer();
+// const poll = {
+//   question: 'What is your favourite programming language?',
+//   options: [`0 : JavaScript`, `1: Python`, `2: Rust`, `3: C++`],
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer() {
+//     const answer = Number(
+//       prompt(
+//         `${this.question} \n ${this.options.join(
+//           '\n'
+//         )} \n (Write Option Number)`
+//       )
+//     );
+//     typeof answer === 'number' &&
+//       answer < this.options.length &&
+//       this.answers[answer]++;
+//     this.displayResults();
+//     this.displayResults('string');
+//   },
+//   displayResults(type = 'array') {
+//     if (type === 'array') {
+//       console.log(this.answers);
+//     } else if (type === 'string') {
+//       console.log(`Poll Results are ${this.answers.join(', ')}`);
+//     }
+//   },
+// };
+// document
+//   .querySelector('.poll')
+//   .addEventListener('click', poll.registerNewAnswer.bind(poll));
+// poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+// poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 // const bookings = [];
 // const creatBooking = function (
 //   flightNum,
@@ -147,21 +161,21 @@ poll.registerNewAnswer();
 //   );
 //   this.booking.push({ flight: `${this.iataCode}${flightNum}`, name });
 // };
-// book.call(airMyanmar, 1243, 'tun zaw');
-// book.call(airAsia, 323, 'Nay Htoo Naing');
-// book.call(airMyanmar, 1243, 'tunf zaw');
-// const flightData = [111, 'ZAW ZAw Aung'];
-// book.apply(asiaDragon, flightData);
-// book.call(asiaDragon, ...flightData);
+// // book.call(airMyanmar, 1243, 'tun zaw');
+// // book.call(airAsia, 323, 'Nay Htoo Naing');
+// // book.call(airMyanmar, 1243, 'tunf zaw');
+// // const flightData = [111, 'ZAW ZAw Aung'];
+// // book.apply(asiaDragon, flightData);
+// // book.call(asiaDragon, ...flightData);
 
 // const bookBind = book.bind(airAsia);
-// bookBind(23, 'hello world');
+// // bookBind(23, 'hello world');
 
 // const bookMyanmar = book.bind(airMyanmar);
 // const bookAsia = book.bind(airAsia);
 // const bookDragon = book.bind(asiaDragon);
 // const book25 = book.bind(asiaDragon, 25);
-// book25('ewj;lk');
+// // book25('ewj;lk');
 
 // airMyanmar.planes = 300;
 // airMyanmar.buyPlane = function () {
@@ -177,3 +191,63 @@ poll.registerNewAnswer();
 // console.log(addTxt(0.1, 200));
 // const addGame = addTxt.bind('', 0.5);
 // console.log(addGame(262));
+
+// (() => {
+//   console.log('One Time Running, Never Come Back');
+//   const inPrivate = 'Hello World';
+// })();
+// // console.log(inPrivate);
+
+// {
+//   const hello = 'hello world';
+//   var world = 'hi javaScript';
+// }
+// console.log(world);
+// console.log(hello);
+
+// const secureBooking = () => {
+//   let passengerCount = 0;
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} Passenger`);
+//   };
+// };
+// // const booker = secureBooking();
+// // booker();
+// // booker();
+// // booker();
+
+// let f;
+// const g = () => {
+//   const a = 23;
+//   f = () => {
+//     console.log(a * 2);
+//   };
+// };
+// g();
+// f();
+
+// const h = () => {
+//   const b = 777;
+//   f = () => {
+//     console.log(b * 2);
+//   };
+// };
+// h();
+// f();
+// const bordPassengers = function (n, wait) {
+//   const parGroup = n / 3;
+//   setTimeout(function () {
+//     console.log(`We are now boarding all ${n} passenger`);
+//   }, 1000 * wait);
+//   console.log(`There are 3 groups, each with ${parGroup} passenger`);
+// };
+
+// bordPassengers(180, 3);
+const header = document.querySelector('h1');
+(function () {
+  header.style.color = 'red';
+})();
+document.querySelector('body').addEventListener('click', function () {
+  header.style.color = 'blue';
+});
