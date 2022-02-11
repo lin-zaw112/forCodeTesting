@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #444;
   background-color: #f3f3f3;
   height: 100vh;
@@ -94,7 +94,7 @@ nav {
   gap: 2rem;
 
   /* NOTE This creates the fade in/out anumation */
-  opacity: 0;
+  /* opacity: 0; */
   transition: all 1s;
 }
 
@@ -127,9 +127,28 @@ nav {
   grid-row: 2 / span 3;
   background-color: #fff;
   border-radius: 1rem;
-  overflow: scroll;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
-
+::-webkit-inner-spin-button {
+  display: none;
+}
+.movements::-webkit-scrollbar {
+  width: 10px;
+}
+.movements::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: linear-gradient(left, #212121, #323232);
+  box-shadow: 0 0 1px 1px #111;
+}
+.movements::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #4a4a4a, #404040);
+  box-shadow: inset 0 0 1px 1px #191919;
+}
+.movements::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(left, #555555, #4e4e4e);
+}
 .movements__row {
   padding: 2.25rem 4rem;
   display: flex;
